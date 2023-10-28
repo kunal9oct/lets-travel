@@ -29,7 +29,10 @@ let cr = new CallbackRequest({
 cr.save().then(() => console.log('Done'));
 */
 
-mongoose.connect('mongodb://127.0.0.1/travels');
+let username = process.env.mongoUserName;
+let password = process.env.mongoUserPass;
+
+mongoose.connect(`mongodb+srv://${username}:${password}@cluster-go.vwwxujb.mongodb.net/travels`, {useNewUrlParser: true, useUnifiedTopology: true});
 app.use(express.json());
 let imageStorage = multer.diskStorage({
     destination: (req, file, cb) => cb(null, 'public/images'),   // for destination we use callback function which takes two values, 1st argument is what to do in case of error, 2nd argument is where to save
