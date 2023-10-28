@@ -6,7 +6,7 @@ signInForm.addEventListener('submit', function(e) {
     let email = document.querySelector('#sign-in-email').value;
     let password = document.querySelector('#sign-in-password').value;
 
-    fetch('http://localhost:3000/users/login', {
+    fetch('/users/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -33,7 +33,7 @@ registerForm.addEventListener('submit', function(e) {
         alert('Password not same, password should be same to re-enter password');
         return;
     }
-    fetch('http://localhost:3000/users/register', {
+    fetch('/users/register', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

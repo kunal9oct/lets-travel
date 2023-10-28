@@ -23,7 +23,7 @@ createForm.addEventListener('submit', function(e) {
     data.append('description', createDescription);
     data.append('imageFile', imageFile.files[0]);  // input of type file, have text(selected file name) then it's not saved in value key rather in files key which is an array too
 
-    fetch('http://localhost:3000/posts', {
+    fetch('/posts', {
         method: 'POST',
         body: data
     }).then((response) => response.text()).then((data) => window.history.go());

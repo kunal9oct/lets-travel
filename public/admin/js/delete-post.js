@@ -18,7 +18,7 @@ articlesBlock.addEventListener('click', function(e) {
 
         // remember 1st parentNode takes you to 'td' element then 3nd parentNode takes you to 'tr' element after we use querySelector to find id class
         let id = e.target.parentNode.parentNode.querySelector('.id').value;
-        fetch('http://localhost:3000/posts/' + id, {
+        fetch('/posts/' + id, {
             method: 'DELETE'
         }).then((response) => response.text())
         .then(() => window.history.go());
