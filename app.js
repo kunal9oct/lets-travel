@@ -106,4 +106,5 @@ app.get('/login', (req, resp) => {
     }
 })
 
-app.listen(3000, () => console.log('Listening 3000...'));
+let port = process.env.PORT || 3000;    // this will provide port given to us by render service & || is used if that port doesn't work then use 3000
+app.listen(port, () => console.log(`Listening ${port}...`));
